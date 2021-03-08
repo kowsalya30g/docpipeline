@@ -1,6 +1,6 @@
 FROM openjdk
-COPY sortingstrings/src /opt/SortString/
-WORKDIR  sortingstrings
+COPY sortingstrings/src/SortString /opt/sortingstrings/
+WORKDIR  /opt/sortingstrings/
 RUN mkdir -p bin
 RUN "javac -d bin ./(default package)/SortString.java"
 WORKDIR bin

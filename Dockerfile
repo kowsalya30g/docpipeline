@@ -1,4 +1,5 @@
 FROM openjdk
+WORKDIR sortingstrings
 COPY src sortingstrings
 WORKDIR sortingstrings
 RUN mkdir -p bin

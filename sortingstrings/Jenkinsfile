@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         dockerImage=''
-        registry = 'keerthibattula/javaApp'
+        registry = 'keerthibattula/javaapp'
     }
     stages {
         // Building Docker images

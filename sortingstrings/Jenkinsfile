@@ -3,6 +3,7 @@ pipeline {
     environment {
         dockerImage=''
         registry = 'keerthibattula/javaapp'
+        registryCredential = 'dockerhub_id'
     }
     stages {
         // Building Docker images
@@ -13,6 +14,14 @@ pipeline {
         }
       }
     }
-        
+      stage('Upload Image') {
+     steps{    
+         script {
+            docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+            }
+        }
+      }
+    }  
     }
 }

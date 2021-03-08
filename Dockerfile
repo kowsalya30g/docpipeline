@@ -1,3 +1,7 @@
-FROM node:14-alpine
-
-RUN apk add -U subversion
+FROM openjdk
+COPY src sortingstrings
+WORKDIR sortingstrings
+RUN mkdir -p bin
+RUN "javac -d bin ./(default package)/SortString.java"
+WORKDIR bin
+CMD ["java","(default package)/SortString"]

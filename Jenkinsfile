@@ -1,5 +1,5 @@
 pipeline {
-    agent { dockerfile true }
+    agent { -f/sortingstrings/dockerfile true }
     stages {
         stage('Test') {
             steps {

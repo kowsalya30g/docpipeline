@@ -23,12 +23,7 @@ pipeline {
         }
       }
     }  
-        stage('docker stop container') {
-         steps {
-            sh 'docker ps -f name=javaappContainer -q | xargs --no-run-if-empty docker container stop'
-            sh 'docker container ls -a -fname=javaappContainer -q | xargs -r docker container rm'
-         }
-       }
+       
          stage('Docker Run') {
      steps{
          script {

@@ -25,14 +25,14 @@ pipeline {
     }  
         stage('docker stop container') {
          steps {
-            sh 'docker ps -f name=mypythonappContainer -q | xargs --no-run-if-empty docker container stop'
-            sh 'docker container ls -a -fname=mypythonappContainer -q | xargs -r docker container rm'
+            sh 'docker ps -f name=javaappContainer -q | xargs --no-run-if-empty docker container stop'
+            sh 'docker container ls -a -fname=javaappContainer -q | xargs -r docker container rm'
          }
        }
          stage('Docker Run') {
      steps{
          script {
-            dockerImage.run("-p 8096:5000 --rm --name mypythonappContainer")
+            dockerImage.run("-p 8096:5000 --rm --name javaappContainer")
          }
       }
     }
